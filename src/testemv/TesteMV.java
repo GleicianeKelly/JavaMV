@@ -168,7 +168,7 @@ public class TesteMV {
     
     
     public static void consultaFuncionario(){
-        
+        System.out.println("**Consultar funcionário**");
     }
     
     
