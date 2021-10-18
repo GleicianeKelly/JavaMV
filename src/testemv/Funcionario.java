@@ -1,20 +1,18 @@
 package testemv;
-
+import java.util.List;
+import java.util.ArrayList;
 public class Funcionario {
     
     
     private String nome;
     private long CPF;
-   
+    private List<Produtos> produtos;
 
-    @Override
-    public String toString() {
-        return "\nFuncionario: " + this.getNome() + "\nCPF: " + this.getCPF();
-    }
 
     public Funcionario(String nome, long CPF) {
         this.nome = nome;
         this.CPF = CPF;
+        this.produtos = new ArrayList<Produtos>();
     }
     
     
@@ -34,6 +32,36 @@ public class Funcionario {
         this.CPF = CPF;
     }
 
+    public List<Produtos> getProdutos() {
+        return produtos;
+    }
 
+    public void setProdutos(List<Produtos> produtos) {
+        this.produtos = produtos;
+    }
+
+   
+    @Override
+       public String toString() {
+           String resposta = "Nome:" + this.nome +
+                      "cpf: "  + this.CPF +
+                       "Produtos: " ;
+            for(Produtos produto : this.produtos) {
+
+            resposta += "Nome do produto: " + produto.getNomeProduto();
+        }
+            return resposta;
+           
+           
+       }
+   
+    
+       
+       
+    public void registrarOpcao(Produtos encontrarProdutos){
+       
+       this.produtos.add(encontrarProdutos);
+       
+    }
     
 }

@@ -6,10 +6,8 @@ public class Produtos {
 
     @Override
     public String toString() {
-        return "Produtos{" + "nomeProduto=" + nomeProduto + '}';
+        return "Produto: " + this.getNomeProduto();
     }
-
-    
     
     public Produtos(String nomeProduto) {
         this.nomeProduto = nomeProduto;
